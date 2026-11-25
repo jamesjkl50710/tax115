@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>115年度綜所稅試算｜2027年5月報稅適用・免稅額10.1萬新制</title>
+<meta name="description" content="免費綜所稅試算工具，已套用財政部公告115年度（2027年5月申報）免稅額10.1萬、標準扣除額13.6萬、薪資特別扣除額22.7萬、房屋租金特別扣除額18萬與新課稅級距。輸入年薪立即算出預估應納稅額。">
+<meta property="og:title" content="115年度綜所稅試算（2027年5月報稅）">
+<meta property="og:description" content="輸入年薪，立即算出明年要繳多少綜所稅。已套用最新免稅額、扣除額與級距。">
+<meta property="og:type" content="website">
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#fbfaf6,#101614);--card:light-dark(#ffffff,#18211e);--ink:light-dark(#1b2420,#e7eee9);--mute:light-dark(#5f6b66,#9fb0a8);--line:light-dark(#d9e0dc,#2b3833);--green:light-dark(#1f4d3f,#8fd3b6);--stamp:#d9481c;--tint:light-dark(#eef4f0,#1c2a25)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overflow-x:clip}
+header{background:var(--green);color:light-dark(#fff,#0c1512);padding:clamp(28px,5vw,56px) max(5vw,16px) clamp(22px,4vw,40px)}
+header h1{margin:0;font:700 clamp(28px,4.4vw,46px)/1.1 "Noto Serif TC",serif;text-wrap:balance}
+header p{margin:10px 0 0;max-width:62ch;opacity:.9}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(20px,3vw,40px) max(4vw,14px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;align-items:start}
+@media(max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+h2{font:700 20px/1.3 "Noto Serif TC",serif;margin:0 0 14px;color:var(--green)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.row label{font-weight:600}.row small{display:block;color:var(--mute);font-weight:400;font-size:13px}
+input,select{width:100%;font:16px/1.2 inherit;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);text-align:right;min-height:44px}
+select{text-align:left}
+input:focus,select:focus{outline:3px solid color-mix(in srgb,var(--green) 40%,transparent);border-color:var(--green)}
+@media(max-width:520px){.row{grid-template-columns:minmax(0,1fr)}}
+details{margin-top:8px}summary{cursor:pointer;color:var(--green);font-weight:600;min-height:44px;display:flex;align-items:center}
+.result{position:sticky;top:16px}
+@media(max-width:860px){.result{position:static;order:-1}}
+.stamp{border:3px solid var(--stamp);border-radius:12px;padding:18px;text-align:center;margin-bottom:16px;background:color-mix(in srgb,var(--stamp) 6%,var(--card))}
+.stamp .lab{color:var(--stamp);font-weight:700;letter-spacing:.05em}
+.stamp .big{font:700 clamp(36px,6vw,52px)/1.1 "Noto Serif TC",serif;margin:6px 0;white-space:nowrap}
+.stamp .sub{color:var(--mute);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td{padding:7px 0;border-bottom:1px solid var(--line)}td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:700;border-bottom:0}
+.tip{background:var(--tint);border-radius:10px;padding:12px 14px;margin-top:14px;font-size:15px}
+.cta{display:block;margin-top:16px;text-align:center;background:var(--green);color:light-dark(#fff,#0c1512);text-decoration:none;font-weight:700;padding:14px;border-radius:10px;min-height:44px}
+.cta:focus-visible{outline:3px solid var(--stamp);outline-offset:2px}
+.notes{max-width:1180px;margin:0 auto;padding:0 max(4vw,14px) 48px;color:var(--mute);font-size:14px}
+.notes h2{font-size:18px}
+.notes ul{padding-left:1.2em}
+.brk{width:100%}.brk td:first-child{white-space:nowrap}
+</style>
+</head>
+<body>
+<header>
+<h1>115年度綜所稅試算</h1>
+<p>2027 年 5 月報稅適用。已套用財政部公告的免稅額 10.1 萬、標準扣除額 13.6 萬、薪資特別扣除額 22.7 萬、房屋租金特別扣除額 18 萬與新課稅級距。資料只在你的瀏覽器計算，不會上傳。</p>
+</header>
+<main class="wrap">
+<section class="card" aria-label="輸入資料">
+<h2>收入</h2>
+<div class="row"><label for="sal1">本人全年薪資<small>含年終、獎金</small></label><input id="sal1" inputmode="numeric" value="600000"></div>
+<div class="row"><label for="sal2">配偶全年薪資<small>沒有配偶或分開申報填 0</small></label><input id="sal2" inputmode="numeric" value="0"></div>
+<div class="row"><label for="oth">其他所得<small>利息、租賃等（股利若選分開計稅請勿填）</small></label><input id="oth" inputmode="numeric" value="0"></div>
+<h2 style="margin-top:22px">家庭</h2>
+<div class="row"><label for="sp">是否與配偶合併申報</label><select id="sp"><option value="0">否</option><option value="1">是</option></select></div>
+<div class="row"><label for="dep">受扶養親屬人數<small>不含本人與配偶</small></label><input id="dep" inputmode="numeric" value="0"></div>
+<div class="row"><label for="old">其中年滿 70 歲人數<small>含本人、配偶</small></label><input id="old" inputmode="numeric" value="0"></div>
+<h2 style="margin-top:22px">扣除額</h2>
+<div class="row"><label for="item">列舉扣除額合計<small>保險費、醫藥費、捐贈等；會與標準扣除額取高者</small></label><input id="item" inputmode="numeric" value="0"></div>
+<div class="row"><label for="rent">全年房租<small>租屋自住，扣除政府租金補貼後；上限 18 萬</small></label><input id="rent" inputmode="numeric" value="120000"></div>
+<div class="row"><label for="mort">是否申報購屋借款利息<small>選「是」就不能用租金特別扣除額</small></label><select id="mort"><option value="0">否</option><option value="1">是</option></select></div>
+<details>
+<summary>進階：其他特別扣除額、基本生活費</summary>
+<div class="row"><label for="ospec">其他特別扣除額合計<small>儲蓄投資、身障、教育學費、幼兒學前、長照等</small></label><input id="ospec" inputmode="numeric" value="0"></div>
+<div class="row"><label for="blc">每人基本生活費<small>115 年度金額公告前，暫用 114 年度 21.3 萬</small></label><input id="blc" inputmode="numeric" value="213000"></div>
+</details>
+</section>
+<aside class="result" aria-live="polite">
+<div class="card">
+<div class="stamp">
+<div class="lab">預估應納稅額</div>
+<div class="big" id="tax">—</div>
+<div class="sub" id="ratebox">—</div>
+</div>
+<table aria-label="計算明細">
+<tbody id="detail"></tbody>
+</table>
+<div class="tip" id="tip"></div>
+<a class="cta" href="https://portaly.cc/teddy_yoho" rel="noopener">想一起管記帳、預算和存錢目標？下載 Excel 版理財模板 →</a>
+</div>
+</aside>
+</main>
+<section class="notes">
+<h2>115 年度（2027 年 5 月申報）參數</h2>
+<table class="brk">
+<tbody>
+<tr><td>免稅額</td><td class="n">每人 101,000（70 歲以上 151,500）</td></tr>
+<tr><td>標準扣除額</td><td class="n">單身 136,000／有配偶 272,000</td></tr>
+<tr><td>薪資所得特別扣除額</td><td class="n">每人最高 227,000</td></tr>
+<tr><td>房屋租金支出特別扣除額</td><td class="n">每戶最高 180,000</td></tr>
+<tr><td>課稅級距（所得淨額）</td><td class="n">61 萬以下 5%｜61–138 萬 12%｜138–277 萬 20%｜277–519 萬 30%｜519 萬以上 40%</td></tr>
+</tbody>
+</table>
+<h2 style="margin-top:22px">注意事項</h2>
+<ul>
+<li>房屋租金特別扣除額有排除條件：申報戶在國內有自有房屋（5 種例外除外）、適用稅率 20% 以上、股利選 28% 分開計稅、或基本所得額超過 750 萬元者不能適用。本工具以「未扣租金前」的所得淨額判斷稅率。</li>
+<li>本工具為簡化估算，未處理股利分開計稅、分離課稅、最低稅負制及各項特別扣除的細部條件，實際稅額以財政部報稅系統為準。</li>
+<li>資料來源：財政部 114-11-27 公告 115 年度綜合所得稅免稅額、扣除額及課稅級距；所得稅法第 17 條。</li>
+</ul>
+</section>
+<script>
+{
+const P={ex:101000,ex70:151500,std:136000,sal:227000,rentCap:180000};
+const B=[[0,.05,0],[610001,.12,42700],[1380001,.20,153100],[2770001,.30,430100],[5190001,.40,949100]];
+const ids=["sal1","sal2","oth","sp","dep","old","item","rent","mort","ospec","blc"];
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat(String($(id).value).replace(/[^\d.]/g,""));return isFinite(v)&&v>0?v:0};
+const fmt=n=>Math.round(n).toLocaleString("zh-TW");
+const bracket=n=>{let r=B[0];for(const b of B)if(n>=b[0])r=b;return r};
+function calc(){
+const spouse=$("sp").value==="1", mort=$("mort").value==="1";
+const s1=num("sal1"), s2=spouse?num("sal2"):0, oth=num("oth");
+const people=1+(spouse?1:0)+Math.floor(num("dep"));
+const old=Math.min(Math.floor(num("old")),people);
+const inc1=Math.max(0,s1-Math.min(s1,P.sal)), inc2=Math.max(0,s2-Math.min(s2,P.sal));
+const gross=inc1+inc2+oth;
+const exempt=(people-old)*P.ex+old*P.ex70;
+const general=Math.max(P.std*(spouse?2:1),num("item"));
+const ospec=num("ospec");
+const beforeRent=Math.max(0,gross-exempt-general-ospec);
+const rentBlocked=mort||beforeRent>=1380001;
+const rentDed=rentBlocked?0:Math.min(num("rent"),P.rentCap);
+const blcDiff=Math.max(0,people*num("blc")-(exempt+general+rentDed+ospec));
+const net=Math.max(0,gross-exempt-general-rentDed-ospec-blcDiff);
+const [_,rate,diff]=bracket(net);
+const tax=Math.max(0,Math.round(net*rate-diff));
+const totalInc=s1+s2+oth;
+$("tax").textContent="NT$ "+fmt(tax);
+$("ratebox").textContent="適用稅率 "+Math.round(rate*100)+"%　有效稅率 "+(totalInc?(tax/totalInc*100).toFixed(2):"0.00")+"%";
+const rows=[["綜合所得總額（薪資已扣特別扣除額）",gross],["免稅額（"+people+" 人）",-exempt],[(num("item")>P.std*(spouse?2:1)?"列舉":"標準")+"扣除額",-general],["房屋租金特別扣除額"+(rentBlocked&&num("rent")>0?"（不適用）":""),-rentDed],["其他特別扣除額",-ospec],["基本生活費差額",-blcDiff],["所得淨額",net]];
+$("detail").innerHTML=rows.map((r,i)=>`<tr class="${i===rows.length-1?"tot":""}"><td>${r[0]}</td><td class="n">${r[1]<0?"−":""}${fmt(Math.abs(r[1]))}</td></tr>`).join("");
+let tip;
+if(tax===0) tip="依目前資料，預估不用繳綜所稅。";
+else if(rate>=.2&&num("rent")>0&&!mort) tip="適用稅率達 20% 以上，依規定不能使用房屋租金特別扣除額。";
+else if(!rentBlocked&&num("rent")===0) tip="有租屋自住的話，記得填房租：最多可以再扣 18 萬。";
+else tip="所得淨額再多 "+fmt(Math.max(0,(B.find(b=>b[0]>net)||[net])[0]-net))+" 元會進入下一個級距。";
+$("tip").textContent=tip;
+try{localStorage.setItem("taxcalc115",JSON.stringify(Object.fromEntries(ids.map(i=>[i,$(i).value]))))}catch(e){}
+}
+try{const s=JSON.parse(localStorage.getItem("taxcalc115")||"null");if(s)ids.forEach(i=>{if(s[i]!=null)$(i).value=s[i]})}catch(e){}
+ids.forEach(i=>$(i).addEventListener("input",calc));
+calc();
+}
+</script>
+</body>
+</html>
